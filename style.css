@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --list-border-color: #e3e5e4;
+  --bacground-color: #c3c7ca;
+  --list-text-color: #34444f;
+  --right-name-color: #3ae374;
+  --wrong-name-color: #ff3838;
+  --drop-over--bg-color: #eaeaea;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.list_holder {
+  width: 25vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.draggable-list {
+  border: 1px solid var(--list-border-color);
+  color: var(--list-text-color);
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+}
+
+.draggable-list li {
+  background-color: #fff;
+  display: flex;
+  flex: 1;
+}
+
+.draggable-list li:not(:last-of-type) {
+  border-bottom: 1px solid var(--list-border-color);
+}
+
+.draggable-list .number {
+  background-color: var(--bacground-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  height: 60px;
+  width: 60px;
+}
+
+.draggable-list .name {
+  margin: 0 20px 0 0;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+}
+
+.draggable-list li.right .name {
+  color: var(--right-name-color);
+}
+
+.draggable-list li.wrong .name {
+  color: var(--wrong-name-color);
+}
+
+.draggable-list li.over .draggable {
+  background-color: var(--drop-over--bg-color);
+}
+
+.draggable {
+  cursor: move;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 0 15px;
+}
+
+.check-btn {
+  background-color: var(--bacground-color);
+  border: none;
+  color: var(--list-text-color);
+  padding: 10px 20px;
+}
+
+.check-btn:active {
+  transform: scale(0.98);
+}
+
+.check-btn:focus {
+  outline: none;
+}
